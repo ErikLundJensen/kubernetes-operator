@@ -6,6 +6,15 @@ jenkins:
   # Set to false if you have configured CR already and/or you want to deploy an operator only
   enabled: true
 
+  # Enable livenessProbe.
+  # Set to false to let Jenkins pod continue to run even when failing during startup. The may ease problem solving during startup of container.
+  livenessProbe:
+    enabled: true
+
+  # Enable readinessProbe
+  readinessProbe:
+    enabled: true
+
   # apiVersion is the version of the CR manifest
   # The recommended and default value is "jenkins.io/v1alpha2"
   # See https://jenkinsci.github.io/kubernetes-operator/docs/getting-started/v0.1.x/migration-guide-v1alpha1-to-v1alpha2/ for more migration guide
